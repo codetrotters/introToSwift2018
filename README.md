@@ -15,6 +15,6 @@ All coding assignments will be pushed onto your forked copy of this master branc
 
 ### Links
 
-[Syllabus] [1]
+Syllabus: [link]
 
-[1]: https://docs.google.com/document/d/1HDsuC9Kx7Dh-omGM8CBEPDtp62GqN48sbqteTnljG3A/edit?usp=sharing
+[link]: https://docs.google.com/document/d/1HDsuC9Kx7Dh-omGM8CBEPDtp62GqN48sbqteTnljG3A/edit?usp=sharing
