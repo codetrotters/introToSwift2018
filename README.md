@@ -1,15 +1,13 @@
-# introToSwift2018
+# Intro To iOS with Swift, March 2018
 
-## Coding Challenge
+### Welcome!
 
-#### In your software language of preference, please email your solutions to the following coding challenge:
+This repo will serve as the hub for course material. You will find the syllabus, links to resources, homework assignments, presentation decks, and code samples.
 
-1) Create a data model representing a product. Make sure to include the following properties: 
-   name, price, manufacturer, and category
-   
-2) Create an array of 5 products, of which you decide the data for each, and then write logic that sorts the the array of products by price.
+ 
+All coding assignments will be pushed onto your forked copy of this master branch.
 
-3) Write a function that takes an array of products, filters out any product greater than $30, prints out the name, price, and manufacturer of each, and then returns the resulting array.
-
-#### You may write it directly in your email message, or include a screenshot of your code, or a link to a code snippet.
-
+####Course begins:
+ Tuesday, March 27th from 6 - 8pm
+ 
+ @ Piloto 151, Old San Juan, PR
