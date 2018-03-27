@@ -3,15 +3,17 @@
 ### Welcome!
 
 This repo will serve as the hub for course material. You will find the syllabus, links to resources, homework assignments, presentation decks, and code samples.
-
- 
+</br>
 All coding assignments will be sent to me directly via Slack, unless otherwise stated.
 
-### Course begins:
+### Course Details
  Tuesday, March 27th from 6 - 9pm
- 
- @ Piloto 151, Old San Juan, PR
- 
+ </br>
+@ Piloto 151, Old San Juan, PR
+
+Weekly classes: Tuesday, Thursday from 6-9pm
+</br> 
+Office Hours: TBD
 
 ### Links
 
