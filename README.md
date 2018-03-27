@@ -8,7 +8,7 @@ This repo will serve as the hub for course material. You will find the syllabus,
 All coding assignments will be sent to me directly via Slack, unless otherwise stated.
 
 ### Course begins:
- Tuesday, March 27th from 6 - 8pm
+ Tuesday, March 27th from 6 - 9pm
  
  @ Piloto 151, Old San Juan, PR
  
