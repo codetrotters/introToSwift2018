@@ -35,4 +35,3 @@ let booleanValue: Bool = true
 // 5) String: A Unicode compliant way to work with text in your code
 
 let stringValue: String = "Esto es un string"
-
