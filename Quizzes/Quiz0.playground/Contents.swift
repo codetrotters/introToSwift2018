@@ -13,13 +13,18 @@ import UIKit
 
 // A:
 
+let fruit: String = "apple"
+
 // 2) Create an example of a variable named ‘breadPrice’ of type Double, with a default value equal to the value of a quarter.
 
 // A:
 
+var breadPrice = 0.25
+
 // 3) What is the main difference between a constant and a variable?
 
 // A:
+
 
 // 4) What tool in Xcode can one use to create the skeleton of an application’s UI?
 //      i)   Size inspector
@@ -45,7 +50,7 @@ import UIKit
 //      iv)  viewWillDisappear
 //      v)   viewDidDisappear
 
-//  A:
+//  A: i)
 
 // 7) Which of those lifecycle functions is called each time the view appears?
 
@@ -93,3 +98,8 @@ import UIKit
 
     var bigTitleLabel: UILabel?
 
+    bigTitleLabel?.text = "Hola PR"
+
+    if let label = bigTitleLabel {
+        label.text = "Hola PR"
+    }
