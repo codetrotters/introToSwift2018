@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cCR-pO-bKh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--KapicuTracker-->
+        <scene sceneID="rpg-dH-Ljw">
+            <objects>
+                <viewController storyboardIdentifier="homeViewController" id="hjg-C7-eKB" customClass="HomeViewController" customModule="kapicuTrackerKL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RQ1-8F-HvO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kapicuTrackerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="pGj-LE-BLR">
+                                <rect key="frame" x="15" y="487" width="345" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pGj-LE-BLR" secondAttribute="height" multiplier="2.157" id="aSS-4E-bnO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZND-PZ-x8D">
+                                <rect key="frame" x="93.5" y="344.5" width="187.5" height="42"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Z23-Cf-zgw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="newGameButtonPressed:" destination="hjg-C7-eKB" eventType="touchDown" id="wv5-Ne-X9e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7So-1k-xfR" firstAttribute="bottom" secondItem="pGj-LE-BLR" secondAttribute="bottom" constant="20" id="OFn-Vu-MHg"/>
+                            <constraint firstItem="ZND-PZ-x8D" firstAttribute="centerY" secondItem="7So-1k-xfR" secondAttribute="centerY" id="SPU-Lk-URA"/>
+                            <constraint firstAttribute="trailing" secondItem="pGj-LE-BLR" secondAttribute="trailing" constant="15" id="YrD-28-gWZ"/>
+                            <constraint firstItem="ZND-PZ-x8D" firstAttribute="centerX" secondItem="7So-1k-xfR" secondAttribute="centerX" id="ZIE-xc-Z8A"/>
+                            <constraint firstItem="pGj-LE-BLR" firstAttribute="leading" secondItem="RQ1-8F-HvO" secondAttribute="leading" constant="15" id="fiX-fi-5Dp"/>
+                            <constraint firstItem="ZND-PZ-x8D" firstAttribute="width" secondItem="RQ1-8F-HvO" secondAttribute="width" multiplier="1:2" id="sb5-jN-bbP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7So-1k-xfR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="KapicuTracker" id="nhv-DS-AiB"/>
+                    <connections>
+                        <outlet property="newGameButton" destination="ZND-PZ-x8D" id="EBs-eK-6wT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3Y-kg-EQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1506.4000000000001" y="115.59220389805098"/>
+        </scene>
+        <!--Number Of Players View Controller-->
+        <scene sceneID="PFj-N7-6j8">
+            <objects>
+                <viewController storyboardIdentifier="NumberOfPlayersViewController" id="bXj-4k-96J" customClass="NumberOfPlayersViewController" customModule="kapicuTrackerKL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vT5-ko-6YR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-Ba-hR4">
+                                <rect key="frame" x="94" y="260.5" width="187.5" height="166"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyo-Mk-DlK">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="42"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="hqJ-p8-eN0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Two"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-1s-l6s">
+                                        <rect key="frame" x="0.0" y="62" width="187.5" height="42"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="1jH-cp-xTD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Three"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OH1-Ll-7lB">
+                                        <rect key="frame" x="0.0" y="124" width="187.5" height="42"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="KxR-bB-gof"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Four"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gmd-Ba-hR4" firstAttribute="width" secondItem="11m-f4-QB9" secondAttribute="width" multiplier="1:2" id="Gs1-Dp-Kdr"/>
+                            <constraint firstItem="gmd-Ba-hR4" firstAttribute="centerY" secondItem="11m-f4-QB9" secondAttribute="centerY" id="IrF-GX-SSm"/>
+                            <constraint firstItem="gmd-Ba-hR4" firstAttribute="centerX" secondItem="11m-f4-QB9" secondAttribute="centerX" id="gw6-m0-IEw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="11m-f4-QB9"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="playerButtons" destination="OH1-Ll-7lB" collectionClass="NSMutableArray" id="vRh-rF-kpX"/>
+                        <outletCollection property="playerButtons" destination="Wyo-Mk-DlK" collectionClass="NSMutableArray" id="soc-aR-75o"/>
+                        <outletCollection property="playerButtons" destination="vLe-1s-l6s" collectionClass="NSMutableArray" id="v9C-MC-111"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4b1-ng-0q9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2214" y="116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tLz-QK-IYp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCR-pO-bKh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wpd-Yi-f3I">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hjg-C7-eKB" kind="relationship" relationship="rootViewController" id="1MV-1S-xIm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ye6-gW-GLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="kapicuTrackerIcon" width="252" height="128"/>
+    </resources>
+</document>
