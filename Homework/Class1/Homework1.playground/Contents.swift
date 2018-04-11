@@ -4,6 +4,10 @@
 
 //  1) Read and complete chapters 3, 4, 5, 6 from the Ray Wenderlich pdf found in our course repo
 
+
+
+
+
 //  2)
 
 //  i) Create a new app project, Single view, and call it 'Homework1_[initials]'. In the main view of the app, I want you to add the following: 3 UILabels and 4 UIButtons. Use autolayout to configure the view to look like the design provided (firstIteration.png).
