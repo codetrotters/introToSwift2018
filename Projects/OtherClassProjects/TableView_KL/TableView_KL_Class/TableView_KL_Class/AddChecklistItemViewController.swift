@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol AddChecklistItemDelegate: class {
+    func didPressSaveButton(_ item: ChecklistItem)
+}
+
 class AddChecklistItemViewController: UIViewController {
+    
+    var itemModel: ChecklistItem!
+    
+    var delegate: AddChecklistItemDelegate!
     
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
@@ -31,7 +39,32 @@ class AddChecklistItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationBar()
+        updateSaveButton()
+    }
+    
+    private func configureNavigationBar() {
         title = "New Item"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonPressed))
+        navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    private func updateNameInModel(_ name: String) {
+        itemModel.title = name
+        updateSaveButton()
+    }
+    
+    private func updateDescInModel(_ description: String) {
+        itemModel.itemDescription = description
+        updateSaveButton()
+    }
+    
+    private func updateSaveButton() {
+        navigationItem.rightBarButtonItem?.isEnabled = itemModel.isValid
+    }
+    
+    @objc private func saveButtonPressed() {
+        
     }
 }
 
@@ -39,6 +72,18 @@ extension AddChecklistItemViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("Should return is called")
         textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let currentText = textField.text else {
+            return false
+        }
+        
+        let combinedText = (currentText as NSString).replacingCharacters(in: range, with: string)
+       
+        updateNameInModel(combinedText)
+        
         return true
     }
 }
@@ -69,6 +114,11 @@ extension AddChecklistItemViewController: UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
+        if textView.text == placeholderDescriptionText {
+            updateDescInModel("")
+        } else {
+            updateDescInModel(textView.text)
+        }
     }
     
 }

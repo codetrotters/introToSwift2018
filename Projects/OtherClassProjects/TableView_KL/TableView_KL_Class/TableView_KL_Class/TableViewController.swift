@@ -21,6 +21,7 @@ class TableViewController: UITableViewController {
     
     @objc private func addButtonPressed() {
         if let newItemViewController = self.storyboard?.instantiateViewController(withIdentifier: "newItem") as? AddChecklistItemViewController {
+            newItemViewController.itemModel = ChecklistItem()
             navigationController?.pushViewController(newItemViewController, animated: true)
         }
     }

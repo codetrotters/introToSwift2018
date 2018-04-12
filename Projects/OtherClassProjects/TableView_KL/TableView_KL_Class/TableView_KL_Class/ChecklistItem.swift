@@ -13,3 +13,9 @@ struct ChecklistItem {
     var itemDescription: String = ""
     var isSelected: Bool = false
 }
+
+extension ChecklistItem {
+    var isValid: Bool {
+        return !title.isEmpty && !itemDescription.isEmpty
+    }
+}
