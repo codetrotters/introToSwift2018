@@ -15,6 +15,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "To-Do List"
+        checklistItems = ChecklistItem.defaultData
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonPressed))
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
@@ -22,6 +23,7 @@ class TableViewController: UITableViewController {
     @objc private func addButtonPressed() {
         if let newItemViewController = self.storyboard?.instantiateViewController(withIdentifier: "newItem") as? AddChecklistItemViewController {
             newItemViewController.itemModel = ChecklistItem()
+            newItemViewController.delegate = self
             navigationController?.pushViewController(newItemViewController, animated: true)
         }
     }
@@ -33,14 +35,42 @@ extension TableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        cell.textLabel?.text = "This is the first cell"
-        cell.detailTextLabel?.text = "Description of cell"
-        return cell
+        let item = checklistItems[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "default")
+        cell?.textLabel?.text = item.title
+        cell?.detailTextLabel?.text = item.itemDescription
+        cell?.accessoryType = item.isSelected ? .checkmark : .none
+        return cell ?? UITableViewCell()
     }
 }
 
+extension TableViewController {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Checklist count: \(checklistItems.count), indexPathRow: \(indexPath.row)")
+            checklistItems.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        var item = checklistItems[indexPath.row]
+        item.isSelected = !item.isSelected
+        checklistItems[indexPath.row] = item
+        tableView.reloadData()
+    }
+}
 
+extension TableViewController: AddChecklistItemDelegate {
+    func didPressSaveButton(_ item: ChecklistItem) {
+        navigationController?.popViewController(animated: true)
+        checklistItems.append(item)
+        tableView.reloadData()
+    }
+    
+    
+}
 
 
 

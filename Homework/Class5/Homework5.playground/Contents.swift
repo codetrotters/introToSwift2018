@@ -49,7 +49,7 @@
 //
 //
 //
-//  H) Then add another new swift file, and call it 'ColorManager'. Make it a value type object named 'ColorViewModel'. First create a static constant called 'maxRGBValue' of type UInt32, setting the value to 255. Then add another static constant called 'maxRGBFloatValue' of type CGFloat, and set it equal to maxRGBValue but casted to a CGFloat type. It will be apparent soon why we need that value in both number types.
+//  H) Then add another new swift file, and call it 'ColorManager'. Make it a value type object named 'ColorManager'. First create a static constant called 'maxRGBValue' of type UInt32, setting the value to 255. Then add another static constant called 'maxRGBFloatValue' of type CGFloat, and set it equal to maxRGBValue but casted to a CGFloat type. It will be apparent soon why we need that value in both number types.
 //
 //
 //

@@ -16,7 +16,7 @@ class AddChecklistItemViewController: UIViewController {
     
     var itemModel: ChecklistItem!
     
-    var delegate: AddChecklistItemDelegate!
+    weak var delegate: AddChecklistItemDelegate?
     
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
@@ -64,7 +64,7 @@ class AddChecklistItemViewController: UIViewController {
     }
     
     @objc private func saveButtonPressed() {
-        
+        delegate?.didPressSaveButton(itemModel)
     }
 }
 

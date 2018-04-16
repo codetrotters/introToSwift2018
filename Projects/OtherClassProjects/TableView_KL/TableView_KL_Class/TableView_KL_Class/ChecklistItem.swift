@@ -18,4 +18,12 @@ extension ChecklistItem {
     var isValid: Bool {
         return !title.isEmpty && !itemDescription.isEmpty
     }
+    
+    static var defaultData: [ChecklistItem] {
+        var array = [ChecklistItem]()
+        for _ in 0...100 {
+            array.append(ChecklistItem(title: "Deleteing", itemDescription: "fihrifhdifhergef", isSelected: false))
+        }
+        return array
+    }
 }
