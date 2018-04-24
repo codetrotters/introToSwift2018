@@ -57,7 +57,7 @@ extension ViewController: UITableViewDelegate {
             self?.delete(viewModel)
         }
         
-        let cancelAction = UIAlertAction(title: "dgdfgdr", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         actionSheetController.addAction(modalAction)
         actionSheetController.addAction(pushAction)
