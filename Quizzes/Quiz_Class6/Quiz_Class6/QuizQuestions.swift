@@ -11,9 +11,9 @@ import UIKit
 //
 //  1) If I want to create a blueprint of properties/functions that an object can conform to, I can use a what?
 //
-//  A:
+//  A: protocol
 //
-//  2) What are the two functions that are necessary in order to conform to UITableViewDelegate?
+//  2) What are the two functions that are necessary in order to conform to UITableViewDataSource?
 //
 //  i) numberOfSections
 //  ii) numberOfRows
@@ -21,11 +21,11 @@ import UIKit
 //  iv) cellForRow
 //  v) allOfTheAbove
 //
-//  A:
+//  A: ii, iv
 //
 //  3) If a tableview is added to a view controller, what are the TWO properties that need to be set in order for the view controller to provide table data & handling of its interactions?
 //
-//  A:
+//  A: delegate and datasource
 //
 //  4) Create a value type object in this project called 'Note' and give it the following properties:
 //
@@ -59,34 +59,20 @@ import UIKit
 // For question 7
 
 
-enum viewStateType {
-    case Loading
-    case Loaded
-    case Failed
+enum ViewStateType {
+    case loading
+    case loaded
+    case failed
 }
 
 class MainViewController: UIViewController {
     
     var modalVC: ModalViewController!
-    var viewState: viewStateType = .Loading
-    
-    override func viewDidLoad(){
-        print("The view did load")
-    }
+    var viewState: ViewStateType = .loading
 }
 
-class ModalViewController: UIViewController, UITableViewDelegate {
+class ModalViewController: UIViewController {
 
-    var mainVC: MainViewController!
-    var viewState: viewStateType = .Loading
-    
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        
-        
-        
-        
-        
-        
-    }
+    weak var mainVC: MainViewController!
+    var viewState: ViewStateType = .loading
 }

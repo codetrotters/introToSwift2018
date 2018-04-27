@@ -70,7 +70,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gmd-Ba-hR4">
                                 <rect key="frame" x="94" y="260.5" width="187.5" height="166"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyo-Mk-DlK">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wyo-Mk-DlK">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="42"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -78,8 +78,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Two"/>
+                                        <connections>
+                                            <action selector="playerButtonPressed:" destination="bXj-4k-96J" eventType="touchUpInside" id="ehX-rs-th8"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-1s-l6s">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-1s-l6s">
                                         <rect key="frame" x="0.0" y="62" width="187.5" height="42"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -87,8 +90,11 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Three"/>
+                                        <connections>
+                                            <action selector="playerButtonPressed:" destination="bXj-4k-96J" eventType="touchUpInside" id="oOg-SI-Zo0"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OH1-Ll-7lB">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OH1-Ll-7lB">
                                         <rect key="frame" x="0.0" y="124" width="187.5" height="42"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -96,6 +102,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Four"/>
+                                        <connections>
+                                            <action selector="playerButtonPressed:" destination="bXj-4k-96J" eventType="touchUpInside" id="hnk-cD-ofQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -109,14 +118,45 @@
                         <viewLayoutGuide key="safeArea" id="11m-f4-QB9"/>
                     </view>
                     <connections>
-                        <outletCollection property="playerButtons" destination="OH1-Ll-7lB" collectionClass="NSMutableArray" id="vRh-rF-kpX"/>
-                        <outletCollection property="playerButtons" destination="Wyo-Mk-DlK" collectionClass="NSMutableArray" id="soc-aR-75o"/>
-                        <outletCollection property="playerButtons" destination="vLe-1s-l6s" collectionClass="NSMutableArray" id="v9C-MC-111"/>
+                        <outletCollection property="playerButtons" destination="OH1-Ll-7lB" collectionClass="NSMutableArray" id="w2N-gV-lBE"/>
+                        <outletCollection property="playerButtons" destination="vLe-1s-l6s" collectionClass="NSMutableArray" id="oZq-Uh-fQf"/>
+                        <outletCollection property="playerButtons" destination="Wyo-Mk-DlK" collectionClass="NSMutableArray" id="klM-hK-14j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4b1-ng-0q9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2214" y="116"/>
+        </scene>
+        <!--Player Name Entry View Controller-->
+        <scene sceneID="mHN-gk-RjO">
+            <objects>
+                <viewController storyboardIdentifier="playerName" id="dOH-2d-xV3" customClass="PlayerNameEntryViewController" customModule="kapicuTrackerKL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PrV-gx-Ebw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of player" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WiN-yA-G7y">
+                                <rect key="frame" x="20" y="120" width="335" height="24"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4GV-hC-hwO" firstAttribute="trailing" secondItem="WiN-yA-G7y" secondAttribute="trailing" constant="20" id="4rW-TR-5fP"/>
+                            <constraint firstItem="WiN-yA-G7y" firstAttribute="leading" secondItem="4GV-hC-hwO" secondAttribute="leading" constant="20" id="524-Ey-lIb"/>
+                            <constraint firstItem="WiN-yA-G7y" firstAttribute="top" secondItem="4GV-hC-hwO" secondAttribute="top" constant="100" id="79d-ac-hOl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4GV-hC-hwO"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="WiN-yA-G7y" id="uxA-Ce-bpE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgf-IL-pve" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2980" y="123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tLz-QK-IYp">

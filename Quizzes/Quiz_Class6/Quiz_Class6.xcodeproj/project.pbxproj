@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0B5DCAA209286CD0006B977 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCA9209286CD0006B977 /* Note.swift */; };
 		C0BD20DB208FDF7F00A0E6E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD20DA208FDF7F00A0E6E7 /* AppDelegate.swift */; };
 		C0BD20DD208FDF7F00A0E6E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BD20DC208FDF7F00A0E6E7 /* ViewController.swift */; };
 		C0BD20E0208FDF7F00A0E6E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0BD20DE208FDF7F00A0E6E7 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C0B5DCA9209286CD0006B977 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		C0BD20D7208FDF7F00A0E6E7 /* Quiz_Class6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz_Class6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0BD20DA208FDF7F00A0E6E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0BD20DC208FDF7F00A0E6E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				C0BD20DA208FDF7F00A0E6E7 /* AppDelegate.swift */,
 				C0BD20DC208FDF7F00A0E6E7 /* ViewController.swift */,
+				C0B5DCA9209286CD0006B977 /* Note.swift */,
 				C0BD20DE208FDF7F00A0E6E7 /* Main.storyboard */,
 				C0BD20E1208FDF7F00A0E6E7 /* Assets.xcassets */,
 				C0BD20E3208FDF7F00A0E6E7 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 				C0BD20DD208FDF7F00A0E6E7 /* ViewController.swift in Sources */,
 				C0BD20ED208FDF8E00A0E6E7 /* QuizQuestions.swift in Sources */,
 				C0BD20DB208FDF7F00A0E6E7 /* AppDelegate.swift in Sources */,
+				C0B5DCAA209286CD0006B977 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

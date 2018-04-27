@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C00AEA5A2076EE850007F098 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AEA592076EE850007F098 /* UIViewControllerExtensions.swift */; };
 		C00AEA602076F1110007F098 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AEA5F2076F1110007F098 /* ButtonStyle.swift */; };
+		C0B5DCAC20928CBB0006B977 /* PlayerNameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCAB20928CBB0006B977 /* PlayerNameEntryViewController.swift */; };
+		C0B5DCAF20929B7E0006B977 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCAE20929B7E0006B977 /* GameModel.swift */; };
+		C0B5DCB12092ABDE0006B977 /* KapicuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCB02092ABDE0006B977 /* KapicuGame.swift */; };
 		C0CF4807206B11B900131955 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CF4806206B11B900131955 /* AppDelegate.swift */; };
 		C0CF480C206B11B900131955 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CF480A206B11B900131955 /* Main.storyboard */; };
 		C0CF480E206B11B900131955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CF480D206B11B900131955 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		C00AEA592076EE850007F098 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		C00AEA5F2076F1110007F098 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		C0B5DCAB20928CBB0006B977 /* PlayerNameEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameEntryViewController.swift; sourceTree = "<group>"; };
+		C0B5DCAE20929B7E0006B977 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		C0B5DCB02092ABDE0006B977 /* KapicuGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KapicuGame.swift; sourceTree = "<group>"; };
 		C0CF4803206B11B900131955 /* kapicuTrackerKL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kapicuTrackerKL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CF4806206B11B900131955 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0CF480B206B11B900131955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +54,7 @@
 			children = (
 				C0CF4818206B19AB00131955 /* HomeViewController.swift */,
 				C0DF1CE4207451CD005FCD3D /* NumberOfPlayersViewController.swift */,
+				C0B5DCAB20928CBB0006B977 /* PlayerNameEntryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -78,6 +85,15 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		C0B5DCAD20929B630006B977 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C0B5DCAE20929B7E0006B977 /* GameModel.swift */,
+				C0B5DCB02092ABDE0006B977 /* KapicuGame.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C0CF47FA206B11B900131955 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +113,7 @@
 		C0CF4805206B11B900131955 /* kapicuTrackerKL */ = {
 			isa = PBXGroup;
 			children = (
+				C0B5DCAD20929B630006B977 /* Models */,
 				C00AEA5E2076F0FE0007F098 /* Styles */,
 				C0CF4806206B11B900131955 /* AppDelegate.swift */,
 				C00AEA5C2076F0AF0007F098 /* Extensions */,
@@ -181,9 +198,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0DF1CE3207447A7005FCD3D /* UIColorExtensions.swift in Sources */,
+				C0B5DCAC20928CBB0006B977 /* PlayerNameEntryViewController.swift in Sources */,
 				C0CF4807206B11B900131955 /* AppDelegate.swift in Sources */,
+				C0B5DCB12092ABDE0006B977 /* KapicuGame.swift in Sources */,
 				C00AEA5A2076EE850007F098 /* UIViewControllerExtensions.swift in Sources */,
 				C00AEA602076F1110007F098 /* ButtonStyle.swift in Sources */,
+				C0B5DCAF20929B7E0006B977 /* GameModel.swift in Sources */,
 				C0CF4819206B19AB00131955 /* HomeViewController.swift in Sources */,
 				C0DF1CE5207451CD005FCD3D /* NumberOfPlayersViewController.swift in Sources */,
 			);
