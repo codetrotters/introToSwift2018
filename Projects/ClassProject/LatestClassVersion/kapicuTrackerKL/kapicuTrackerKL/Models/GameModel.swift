@@ -69,6 +69,36 @@ extension GameModel {
     func placeholderTextFor(_ player: PlayerToConfigure) -> String {
         return nameOf + navTitleFor(player)
     }
+    
+    func nextPlayerToConfigure(_ currentPlayer: PlayerToConfigure) -> PlayerToConfigure {
+        switch currentPlayer {
+        case .one:
+            return .two
+        case .two:
+            let hasMoreThanTwoPlayers = numberOfPlayers.rawValue > 2
+            return hasMoreThanTwoPlayers ? .three : .allConfigured
+        case .three:
+            let hasMoreThanThreePlayers = numberOfPlayers.rawValue > 3
+            return hasMoreThanThreePlayers ? .four : .allConfigured
+        case .four, .allConfigured:
+            return .allConfigured
+        }
+    }
+    
+    mutating func updatePlayerName(_ name: String, _ player: PlayerToConfigure) {
+        switch player {
+        case .one:
+            firstPlayer = name
+        case .two:
+            secondPlayer = name
+        case .three:
+            thirdPlayer = name
+        case .four:
+            fourthPlayer = name
+        case .allConfigured:
+            break
+        }
+    }
 }
 
 

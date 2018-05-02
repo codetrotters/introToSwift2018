@@ -10,8 +10,8 @@ import UIKit
 
 extension UIViewController {
     
-    func configureBackBarButton() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+    func configureBackBarButton(_ title: String? = nil) {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem?.tintColor = .black
     }
     

@@ -21,11 +21,11 @@ class KapicuGame {
         let numberOfPlayers = NumberOfPlayers(rawValue: numberOfPlayers)!
         updatePlayerCount(numberOfPlayers)
     }
-    
-    func updatePlayerCount(_ numberOfPlayers: NumberOfPlayers) {
-        gameModel.numberOfPlayers = numberOfPlayers
-    }
-    
+}
+
+// MARK: - Custom getters
+
+extension KapicuGame {
     func navTitleFor(_ player: PlayerToConfigure) -> String {
         return gameModel.navTitleFor(player)
     }
@@ -33,4 +33,27 @@ class KapicuGame {
     func placeholderFor(_ player: PlayerToConfigure) -> String {
         return gameModel.placeholderTextFor(player)
     }
+    
+    func nextPlayerToConfigure(_ currentPlayer: PlayerToConfigure) -> PlayerToConfigure {
+        return gameModel.nextPlayerToConfigure(currentPlayer)
+    }
 }
+
+// MARK: - Mutating functions
+
+extension KapicuGame {
+    func updatePlayerCount(_ numberOfPlayers: NumberOfPlayers) {
+        gameModel.numberOfPlayers = numberOfPlayers
+    }
+    
+    func updatePlayerName(_ name: String, _ player: PlayerToConfigure) {
+        gameModel.updatePlayerName(name, player)
+    }
+}
+
+
+
+
+
+
+
