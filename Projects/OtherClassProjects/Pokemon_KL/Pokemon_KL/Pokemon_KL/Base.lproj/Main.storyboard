@@ -23,16 +23,16 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="yvf-ZL-uMa">
-                                    <rect key="frame" x="0.0" y="162" width="375" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="117" width="375" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="134" id="0rD-Qy-XMo">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="134"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="0rD-Qy-XMo">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0rD-Qy-XMo" id="mm7-16-Ihu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NR0-jo-Z53">
@@ -60,6 +60,7 @@
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="NR0-jo-Z53" firstAttribute="leading" secondItem="mm7-16-Ihu" secondAttribute="leading" constant="10" id="9KN-Ix-d5i"/>
+                                                <constraint firstAttribute="bottom" secondItem="NR0-jo-Z53" secondAttribute="bottom" constant="10" id="Hmn-Jw-s9u"/>
                                                 <constraint firstItem="NR0-jo-Z53" firstAttribute="top" secondItem="mm7-16-Ihu" secondAttribute="top" constant="10" id="rnH-Tk-aay"/>
                                             </constraints>
                                         </tableViewCellContentView>
