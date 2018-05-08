@@ -38,58 +38,49 @@ extension QueryService {
         dataTask?.cancel()
         
         let urlString = APIResourceURL.pokemon.url
-        
-        if let urlComponents = URLComponents(string: urlString) {
-            guard let url = urlComponents.url else { return }
+        let url = URL(string: urlString)!
+
+        dataTask = defaultSession.dataTask(with: url, completionHandler: { (data, response, error) in
             
-            dataTask = defaultSession.dataTask(with: url, completionHandler: { (data, response, error) in
+            if let error = error {
+        
+                self.errorMessage += "Data error: " + error.localizedDescription
+    
+            } else if let data = data,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
                 
-                if let error = error {
-            
-                    self.errorMessage += "Data error: " + error.localizedDescription
-        
-                } else if let data = data,
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode == 200 {
-                    
-                    let pokemonList = self.updatePokemonResults(data)
-                    
-                    DispatchQueue.main.async {
-                        completion(pokemonList, self.errorMessage)
-                    }
+                let pokemonList = self.updatePokemonResults(data)
+                
+                DispatchQueue.main.async {
+                    completion(pokemonList, self.errorMessage)
                 }
-                
-            })
-            
-            dataTask?.resume()
-        }
+            }
+        })
+        
+        dataTask?.resume()
+    }
+    
+    func fetchPokemonDetailsWith(_ urlString: String, completion: @escaping SuccessResult) {
+        
+        
+        
     }
 }
 
 extension QueryService {
     
     private func updatePokemonResults(_ data: Data) -> [Pokemon] {
-        var response: JSONDictionary?
-        var pokemon: [Pokemon] = []
-        
-        do {
-            response = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary
-        } catch let error as NSError {
-            errorMessage += "JSONSerialization error: \(error.debugDescription)"
-        }
-        
-        let results = response?["results"] ?? []
-        
-        let jsonData = json(from: results)!
+        var pokemonResponse: PokemonResponse?
         let decoder = JSONDecoder()
         
         do {
-            pokemon = try decoder.decode([Pokemon].self, from: jsonData)
-        } catch {
-            print("Error converting Data into structs")
+            pokemonResponse = try decoder.decode(PokemonResponse.self, from: data)
+        } catch let error {
+            print(error)
         }
         
-        return pokemon
+        return pokemonResponse?.results ?? []
     }
     
     func json(from object:Any) -> Data? {

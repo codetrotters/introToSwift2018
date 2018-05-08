@@ -32,9 +32,23 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pokedexCell", for: indexPath) as! PokedexTableViewCell
         let pokemon = pokemonList[indexPath.row]
-        cell.textLabel?.text = pokemon.name
+        
+        cell.nameLabel.text = pokemon.name.firstLetterCapitalized
+        
         return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        let pokemon = pokemonList[indexPath.row]
+        
+        
     }
 }
