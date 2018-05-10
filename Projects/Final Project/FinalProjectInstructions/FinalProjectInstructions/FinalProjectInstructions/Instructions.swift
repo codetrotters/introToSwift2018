@@ -12,14 +12,14 @@
 //
 //  Project Requirements:
 //
-//  1) Load data from a selected data set from https://data.pr.gov/en/
-//      You must use Alamofire via Cocoapods to load the data.
+//  1) Load data from a selected data set from https://data.pr.gov/data?type=datasets
+//  You must use Alamofire via Cocoapods to load the data. Make sure that the dataset you select has a data item containing at least 5 pieces of information or property.
 //
-//  2) Display the data in a UITableViewController, using your own custom UITableViewCell. The cell must show at least 4 different pieces of information pertaining to your dataset.
+//  2) Display the data in a UITableViewController, using your own custom UITableViewCell. The cell must show at least 3 different pieces of information pertaining to your dataset.
 //
 //  3) When pulling down on the table view to refresh, the dataset should be cleared and fetched again from the pr.gov database.
 //
-//  4) Selecting a cell should take the user to a detail view (via a navigation push) that will show the user at least 8 pieces of information (including the 4 that were shown on the table view)
+//  4) Selecting a cell should take the user to a detail view (via a navigation push) that will show the user at least 5 pieces of information (including the 4 that were shown on the table view)
 //
 //  5) In the detail view, add a navigation bar button item that will be used to Favorite or Unfavorite this specific item.
 //

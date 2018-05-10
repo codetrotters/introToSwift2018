@@ -21,19 +21,18 @@ enum APIResourceURL: String {
 
 class QueryService {
     typealias JSONDictionary = [String: Any]
-    typealias PokemonQueryResult = ([Pokemon]?, String) -> ()
     typealias SuccessResult = (Bool, String) -> ()
     
+    let appData = AppData.shared
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
     var errorMessage = ""
-    var pokemonList = [Pokemon]()
 }
 
 extension QueryService {
     
-    func fetchOriginalPokemon(completion: @escaping PokemonQueryResult) {
+    func fetchOriginalPokemon(completion: @escaping SuccessResult) {
         
         dataTask?.cancel()
         
@@ -45,15 +44,19 @@ extension QueryService {
             if let error = error {
         
                 self.errorMessage += "Data error: " + error.localizedDescription
+                
+                DispatchQueue.main.async {
+                    completion(false, self.errorMessage)
+                }
     
             } else if let data = data,
                 let response = response as? HTTPURLResponse,
                 response.statusCode == 200 {
                 
-                let pokemonList = self.updatePokemonResults(data)
+                let didUpdatePokemon = self.updatePokemonResults(data)
                 
                 DispatchQueue.main.async {
-                    completion(pokemonList, self.errorMessage)
+                    completion(didUpdatePokemon, self.errorMessage)
                 }
             }
         })
@@ -63,24 +66,64 @@ extension QueryService {
     
     func fetchPokemonDetailsWith(_ urlString: String, completion: @escaping SuccessResult) {
         
+        dataTask?.cancel()
         
+        let url = URL(string: urlString)!
         
+        dataTask = defaultSession.dataTask(with: url, completionHandler: { (data, response, error) in
+            
+            if let error = error {
+                
+                self.errorMessage += "Error: " + error.localizedDescription
+                
+                DispatchQueue.main.async {
+                    completion(false, self.errorMessage)
+                }
+                
+            } else if let data = data,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                
+                let didUpdatePokemonDetail = self.updatePokemonDetails(data)
+            
+                DispatchQueue.main.async {
+                    completion(didUpdatePokemonDetail, self.errorMessage)
+                }
+            }
+        })
+        
+        dataTask?.resume()
     }
 }
 
 extension QueryService {
     
-    private func updatePokemonResults(_ data: Data) -> [Pokemon] {
+    private func updatePokemonResults(_ data: Data) -> Bool {
         var pokemonResponse: PokemonResponse?
         let decoder = JSONDecoder()
         
         do {
             pokemonResponse = try decoder.decode(PokemonResponse.self, from: data)
-        } catch let error {
-            print(error)
+            appData.updatePokemonList(with: pokemonResponse)
+            return true
+            
+        } catch {
+            return false
         }
+    }
+    
+    private func updatePokemonDetails(_ data: Data) -> Bool {
+        var pokemonDetailResponse: PokemonDetailResponse?
+        let decoder = JSONDecoder()
         
-        return pokemonResponse?.results ?? []
+        do {
+           pokemonDetailResponse = try decoder.decode(PokemonDetailResponse.self, from: data)
+            appData.updatePokemonImage(with: pokemonDetailResponse)
+            return true
+            
+        } catch {
+            return false
+        }
     }
     
     func json(from object:Any) -> Data? {

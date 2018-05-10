@@ -11,4 +11,16 @@ import Foundation
 struct Pokemon: Codable {
     var name: String = ""
     var url: String = ""
+    var imageURLString: String? = ""
+}
+
+extension Pokemon {
+    
+    var id: Int {
+        var urlComponents = url.components(separatedBy: "/")
+        urlComponents.removeLast()
+        let intString = urlComponents.last ?? ""
+        return Int(intString) ?? 0
+    }
+    
 }
