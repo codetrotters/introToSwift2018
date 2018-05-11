@@ -28,6 +28,7 @@ class QueryService {
     var dataTask: URLSessionDataTask?
     var dataTasks = [URLSessionDataTask]()
     
+    var nextPageURL: String?
     var errorMessage = ""
 }
 
@@ -37,7 +38,7 @@ extension QueryService {
         
         dataTask?.cancel()
         
-        let urlString = APIResourceURL.pokemon.url
+        let urlString = (nextPageURL != nil) ? nextPageURL! : APIResourceURL.pokemon.url
         let url = URL(string: urlString)!
 
         dataTask = defaultSession.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -115,6 +116,7 @@ extension QueryService {
         
         do {
             pokemonResponse = try decoder.decode(PokemonResponse.self, from: data)
+            nextPageURL = pokemonResponse?.next
             appData.updatePokemonList(with: pokemonResponse)
             return true
             

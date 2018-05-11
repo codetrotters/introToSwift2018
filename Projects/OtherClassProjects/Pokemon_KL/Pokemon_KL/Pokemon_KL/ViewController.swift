@@ -22,6 +22,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Pokedex"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Load Next Page", style: .plain, target: self, action: #selector(loadOriginalPokemon))
+        loadOriginalPokemon()
+    }
+    
+    @objc private func loadOriginalPokemon() {
         queryService.fetchOriginalPokemon { [weak self] (_, _) in
             self?.tableView.reloadData()
         }
@@ -40,12 +45,16 @@ extension ViewController: UITableViewDataSource {
         let pokemon = pokemonList[indexPath.row]
         
         cell.nameLabel.text = pokemon.name.firstLetterCapitalized
-        cell.pokedexNumberLabel.text = pokemon.imageURLString
+        cell.pokedexNumberLabel.text = "#\(pokemon.id)"
         
         if let imageURL = URL(string: pokemon.imageURLString ?? "") {
             cell.pokemonImageView.af_setImage(withURL: imageURL, completion: { (_) in
-                
+                DispatchQueue.main.async {
+                    cell.setNeedsLayout()
+                }
             })
+        } else {
+            cell.pokemonImageView.image = nil
         }
         
         return cell
@@ -63,6 +72,16 @@ extension ViewController: UITableViewDelegate {
             if success {
                 self?.tableView.reloadData()
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let totalPokemonCount = pokemonList.count
+        let currentRow = indexPath.row
+        
+        if (totalPokemonCount - 1) == currentRow {
+            print("We're at the bottom")
+            loadOriginalPokemon()
         }
     }
 }
