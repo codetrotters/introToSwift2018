@@ -26,6 +26,7 @@ class QueryService {
     let appData = AppData.shared
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
+    var dataTasks = [URLSessionDataTask]()
     
     var errorMessage = ""
 }
@@ -63,36 +64,46 @@ extension QueryService {
         
         dataTask?.resume()
     }
+
+    
+    
     
     func fetchPokemonDetailsWith(_ urlString: String, completion: @escaping SuccessResult) {
         
-        dataTask?.cancel()
-        
         let url = URL(string: urlString)!
+        var newDataTask = defaultSession.dataTask(with: url)
         
-        dataTask = defaultSession.dataTask(with: url, completionHandler: { (data, response, error) in
+        newDataTask = defaultSession.dataTask(with: url) { [weak self] (data, response, error) in
+            defer {
+                newDataTask.cancel()
+            }
             
             if let error = error {
-                
-                self.errorMessage += "Error: " + error.localizedDescription
-                
-                DispatchQueue.main.async {
-                    completion(false, self.errorMessage)
-                }
+                self?.handleError(error, completion)
                 
             } else if let data = data,
                 let response = response as? HTTPURLResponse,
                 response.statusCode == 200 {
-                
-                let didUpdatePokemonDetail = self.updatePokemonDetails(data)
-            
-                DispatchQueue.main.async {
-                    completion(didUpdatePokemonDetail, self.errorMessage)
-                }
+
+                self?.handleSuccess(data, completion)
             }
-        })
-        
-        dataTask?.resume()
+        }
+    
+        newDataTask.resume()
+    }
+    
+    private func handleError(_ error: Error, _ completion: @escaping SuccessResult) {
+        self.errorMessage += "Error: " + error.localizedDescription
+        DispatchQueue.main.async {
+            completion(false, self.errorMessage)
+        }
+    }
+    
+    private func handleSuccess(_ data: Data, _ completion: @escaping SuccessResult) {
+        let didUpdatePokemonDetail = updatePokemonDetails(data)
+        DispatchQueue.main.async {
+            completion(didUpdatePokemonDetail, self.errorMessage)
+        }
     }
 }
 

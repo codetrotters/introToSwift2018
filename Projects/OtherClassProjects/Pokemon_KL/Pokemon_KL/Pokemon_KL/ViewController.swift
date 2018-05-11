@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ViewController: UIViewController {
 
@@ -40,6 +41,12 @@ extension ViewController: UITableViewDataSource {
         
         cell.nameLabel.text = pokemon.name.firstLetterCapitalized
         cell.pokedexNumberLabel.text = pokemon.imageURLString
+        
+        if let imageURL = URL(string: pokemon.imageURLString ?? "") {
+            cell.pokemonImageView.af_setImage(withURL: imageURL, completion: { (_) in
+                
+            })
+        }
         
         return cell
     }
