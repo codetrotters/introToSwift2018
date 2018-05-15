@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum APIResourceURL: String {
     case pokemon
@@ -30,93 +31,40 @@ class QueryService {
     
     var nextPageURL: String?
     var errorMessage = ""
+    
+    var nextURLString: String {
+        return (nextPageURL != nil) ? nextPageURL! : APIResourceURL.pokemon.url
+    }
 }
 
 extension QueryService {
     
     func fetchOriginalPokemon(completion: @escaping SuccessResult) {
-        
-        dataTask?.cancel()
-        
-        let urlString = (nextPageURL != nil) ? nextPageURL! : APIResourceURL.pokemon.url
-        let url = URL(string: urlString)!
-
-        dataTask = defaultSession.dataTask(with: url, completionHandler: { (data, response, error) in
+        Alamofire.request(nextURLString).responseJSON { (response) in
             
-            if let error = error {
-        
-                self.errorMessage += "Data error: " + error.localizedDescription
-                
-                DispatchQueue.main.async {
-                    completion(false, self.errorMessage)
-                }
-    
-            } else if let data = data,
-                let response = response as? HTTPURLResponse,
-                response.statusCode == 200 {
-                
-                let didUpdatePokemon = self.updatePokemonResults(data)
-                
-                DispatchQueue.main.async {
-                    completion(didUpdatePokemon, self.errorMessage)
-                }
-            }
-        })
-        
-        dataTask?.resume()
+            let didUpdatePokemon = self.updatePokemonResults(response)
+            completion(didUpdatePokemon, self.errorMessage)
+        }
     }
-
-    
-    
     
     func fetchPokemonDetailsWith(_ urlString: String, completion: @escaping SuccessResult) {
         
-        let url = URL(string: urlString)!
-        var newDataTask = defaultSession.dataTask(with: url)
-        
-        newDataTask = defaultSession.dataTask(with: url) { [weak self] (data, response, error) in
-            defer {
-                newDataTask.cancel()
-            }
-            
-            if let error = error {
-                self?.handleError(error, completion)
-                
-            } else if let data = data,
-                let response = response as? HTTPURLResponse,
-                response.statusCode == 200 {
-
-                self?.handleSuccess(data, completion)
-            }
-        }
-    
-        newDataTask.resume()
-    }
-    
-    private func handleError(_ error: Error, _ completion: @escaping SuccessResult) {
-        self.errorMessage += "Error: " + error.localizedDescription
-        DispatchQueue.main.async {
-            completion(false, self.errorMessage)
-        }
-    }
-    
-    private func handleSuccess(_ data: Data, _ completion: @escaping SuccessResult) {
-        let didUpdatePokemonDetail = updatePokemonDetails(data)
-        DispatchQueue.main.async {
-            completion(didUpdatePokemonDetail, self.errorMessage)
+        Alamofire.request(urlString).responseJSON { (response) in
+            let didUpdateDetails = self.updatePokemonDetails(response)
+            completion(didUpdateDetails, self.errorMessage)
         }
     }
 }
 
 extension QueryService {
     
-    private func updatePokemonResults(_ data: Data) -> Bool {
-        var pokemonResponse: PokemonResponse?
+    private func updatePokemonResults(_ response: DataResponse<Any>) -> Bool {
+        guard let data = response.data else { return false }
         let decoder = JSONDecoder()
         
         do {
-            pokemonResponse = try decoder.decode(PokemonResponse.self, from: data)
-            nextPageURL = pokemonResponse?.next
+            let pokemonResponse = try decoder.decode(PokemonResponse.self, from: data)
+            nextPageURL = pokemonResponse.next
             appData.updatePokemonList(with: pokemonResponse)
             return true
             
@@ -125,12 +73,12 @@ extension QueryService {
         }
     }
     
-    private func updatePokemonDetails(_ data: Data) -> Bool {
-        var pokemonDetailResponse: PokemonDetailResponse?
+    private func updatePokemonDetails(_ response: DataResponse<Any>) -> Bool {
+        guard let data = response.data else { return false }
         let decoder = JSONDecoder()
         
         do {
-           pokemonDetailResponse = try decoder.decode(PokemonDetailResponse.self, from: data)
+            let pokemonDetailResponse = try decoder.decode(PokemonDetailResponse.self, from: data)
             appData.updatePokemonImage(with: pokemonDetailResponse)
             return true
             
@@ -138,16 +86,4 @@ extension QueryService {
             return false
         }
     }
-    
-    func json(from object:Any) -> Data? {
-        guard let data = try? JSONSerialization.data(withJSONObject: object, options: []) else {
-            return nil
-        }
-        return data
-    }
 }
-
-
-
-
-
