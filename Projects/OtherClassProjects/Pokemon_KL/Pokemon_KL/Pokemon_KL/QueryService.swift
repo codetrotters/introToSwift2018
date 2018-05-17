@@ -60,30 +60,30 @@ extension QueryService {
     
     private func updatePokemonResults(_ response: DataResponse<Any>) -> Bool {
         guard let data = response.data else { return false }
-        let decoder = JSONDecoder()
-        
-        do {
-            let pokemonResponse = try decoder.decode(PokemonResponse.self, from: data)
-            nextPageURL = pokemonResponse.next
+
+        if let pokemonResponse = convertData(to: PokemonResponse.self, data) {
             appData.updatePokemonList(with: pokemonResponse)
             return true
-            
-        } catch {
+        } else {
             return false
         }
     }
     
     private func updatePokemonDetails(_ response: DataResponse<Any>) -> Bool {
         guard let data = response.data else { return false }
-        let decoder = JSONDecoder()
         
-        do {
-            let pokemonDetailResponse = try decoder.decode(PokemonDetailResponse.self, from: data)
+        if let pokemonDetailResponse = convertData(to: PokemonDetailResponse.self, data) {
             appData.updatePokemonImage(with: pokemonDetailResponse)
             return true
-            
-        } catch {
+        } else {
             return false
         }
+    }
+}
+
+extension QueryService {
+    private func convertData<T:Decodable>(to type: T.Type, _ data: Data) -> T? {
+        let decoder = JSONDecoder()
+        return try? decoder.decode(type, from: data)
     }
 }

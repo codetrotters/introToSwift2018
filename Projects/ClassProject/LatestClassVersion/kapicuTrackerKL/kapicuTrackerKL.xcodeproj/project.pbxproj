@@ -17,6 +17,8 @@
 		C0CF480E206B11B900131955 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CF480D206B11B900131955 /* Assets.xcassets */; };
 		C0CF4811206B11B900131955 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CF480F206B11B900131955 /* LaunchScreen.storyboard */; };
 		C0CF4819206B19AB00131955 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CF4818206B19AB00131955 /* HomeViewController.swift */; };
+		C0D719B320AE3910007636FF /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D719B220AE3910007636FF /* Storyboards.swift */; };
+		C0D719B520AE3B23007636FF /* StoryboardEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D719B420AE3B23007636FF /* StoryboardEnums.swift */; };
 		C0DF1CE3207447A7005FCD3D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF1CE2207447A7005FCD3D /* UIColorExtensions.swift */; };
 		C0DF1CE5207451CD005FCD3D /* NumberOfPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF1CE4207451CD005FCD3D /* NumberOfPlayersViewController.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		C0CF4810206B11B900131955 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0CF4812206B11B900131955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0CF4818206B19AB00131955 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C0D719B220AE3910007636FF /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		C0D719B420AE3B23007636FF /* StoryboardEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardEnums.swift; sourceTree = "<group>"; };
 		C0DF1CE2207447A7005FCD3D /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		C0DF1CE4207451CD005FCD3D /* NumberOfPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfPlayersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,8 @@
 			children = (
 				C0CF480A206B11B900131955 /* Main.storyboard */,
 				C0CF480F206B11B900131955 /* LaunchScreen.storyboard */,
+				C0D719B220AE3910007636FF /* Storyboards.swift */,
+				C0D719B420AE3B23007636FF /* StoryboardEnums.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -199,10 +205,12 @@
 			files = (
 				C0DF1CE3207447A7005FCD3D /* UIColorExtensions.swift in Sources */,
 				C0B5DCAC20928CBB0006B977 /* PlayerNameEntryViewController.swift in Sources */,
+				C0D719B520AE3B23007636FF /* StoryboardEnums.swift in Sources */,
 				C0CF4807206B11B900131955 /* AppDelegate.swift in Sources */,
 				C0B5DCB12092ABDE0006B977 /* KapicuGame.swift in Sources */,
 				C00AEA5A2076EE850007F098 /* UIViewControllerExtensions.swift in Sources */,
 				C00AEA602076F1110007F098 /* ButtonStyle.swift in Sources */,
+				C0D719B320AE3910007636FF /* Storyboards.swift in Sources */,
 				C0B5DCAF20929B7E0006B977 /* GameModel.swift in Sources */,
 				C0CF4819206B19AB00131955 /* HomeViewController.swift in Sources */,
 				C0DF1CE5207451CD005FCD3D /* NumberOfPlayersViewController.swift in Sources */,
