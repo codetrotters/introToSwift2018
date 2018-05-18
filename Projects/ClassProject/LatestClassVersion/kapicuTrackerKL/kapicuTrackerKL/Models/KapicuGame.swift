@@ -49,6 +49,10 @@ extension KapicuGame {
     func updatePlayerName(_ name: String, _ player: PlayerToConfigure) {
         gameModel.updatePlayerName(name, player)
     }
+    
+    func updateWinningScore(_ score: Int) {
+        gameModel.updateWinningScore(score)
+    }
 }
 
 

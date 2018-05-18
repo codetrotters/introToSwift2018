@@ -14,13 +14,14 @@ enum Storyboards: String {
     case settings
     
     var board: UIStoryboard {
-        return UIStoryboard(name: self.rawValue, bundle: nil)
+        return UIStoryboard(name: self.rawValue.firstLetterCapitalized, bundle: nil)
     }
 }
 
 enum VCIdentifiers: String {
     case numberOfPlayers
     case playerName
+    case scoreSelection
     
     var txt: String {
         return self.rawValue

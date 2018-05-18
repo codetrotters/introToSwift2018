@@ -29,7 +29,7 @@ class NumberOfPlayersViewController: UIViewController {
     
     @IBAction func playerButtonPressed(_ sender: UIButton) {
         let kapicuGame = KapicuGame(sender.tag)
-        let playerNameVC = storyboard?.instantiateViewController(withIdentifier: "playerName") as! PlayerNameEntryViewController
+        let playerNameVC = MainStoryboard.playerNameEntryVC
         playerNameVC.kapicuGame = kapicuGame
         navigationController?.pushViewController(playerNameVC, animated: true)
     }

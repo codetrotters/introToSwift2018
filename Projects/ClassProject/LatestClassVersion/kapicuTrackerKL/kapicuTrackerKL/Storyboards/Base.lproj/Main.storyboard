@@ -62,7 +62,7 @@
         <!--Number Of Players View Controller-->
         <scene sceneID="PFj-N7-6j8">
             <objects>
-                <viewController storyboardIdentifier="NumberOfPlayersViewController" id="bXj-4k-96J" customClass="NumberOfPlayersViewController" customModule="kapicuTrackerKL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="numberOfPlayers" id="bXj-4k-96J" customClass="NumberOfPlayersViewController" customModule="kapicuTrackerKL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vT5-ko-6YR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,6 +157,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgf-IL-pve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2980" y="123"/>
+        </scene>
+        <!--Score Selection View Controller-->
+        <scene sceneID="ubR-Ng-htW">
+            <objects>
+                <viewController storyboardIdentifier="scoreSelection" id="DwV-Gz-N51" customClass="ScoreSelectionViewController" customModule="kapicuTrackerKL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SUu-ZN-WJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KB2-8z-lh8">
+                                <rect key="frame" x="94" y="281.5" width="187.5" height="104"/>
+                                <subviews>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPf-g8-KeQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="42"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="yQX-CG-GuN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Three"/>
+                                        <connections>
+                                            <action selector="scoreButtonPressed:" destination="DwV-Gz-N51" eventType="touchUpInside" id="x8z-Ba-K4X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgc-OB-weE">
+                                        <rect key="frame" x="0.0" y="62" width="187.5" height="42"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="TgA-gb-Ks5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Four"/>
+                                        <connections>
+                                            <action selector="scoreButtonPressed:" destination="DwV-Gz-N51" eventType="touchUpInside" id="xCg-NX-HXe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KB2-8z-lh8" firstAttribute="width" secondItem="SUu-ZN-WJZ" secondAttribute="width" multiplier="1:2" id="7cT-9e-XgG"/>
+                            <constraint firstItem="KB2-8z-lh8" firstAttribute="centerX" secondItem="SUu-ZN-WJZ" secondAttribute="centerX" id="DtL-TP-a4E"/>
+                            <constraint firstItem="KB2-8z-lh8" firstAttribute="centerY" secondItem="SUu-ZN-WJZ" secondAttribute="centerY" id="Xb8-t0-Glx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dHf-nU-aaB"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstScoreButton" destination="DPf-g8-KeQ" id="mN5-Qr-CST"/>
+                        <outlet property="secondScoreButton" destination="Pgc-OB-weE" id="S5k-bA-U7y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kA-ee-ZMX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3770" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tLz-QK-IYp">

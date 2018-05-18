@@ -16,10 +16,27 @@ struct MainStoryboard {
     }
     
     static var numberOfPlayersVC: NumberOfPlayersViewController {
-        return main.instantiateViewController(withIdentifier: VCIdentifiers.numberOfPlayers.txt) as! NumberOfPlayersViewController
+        return main.vcOfType(.numberOfPlayers) as! NumberOfPlayersViewController
+    }
+    
+    static var playerNameEntryVC: PlayerNameEntryViewController {
+        return main.vcOfType(.playerName) as! PlayerNameEntryViewController
+    }
+    
+    static var scoreSelectionVC: ScoreSelectionViewController {
+        return main.vcOfType(.scoreSelection) as! ScoreSelectionViewController
     }
     
 }
+
+
+
+
+
+
+
+
+
 
 
 

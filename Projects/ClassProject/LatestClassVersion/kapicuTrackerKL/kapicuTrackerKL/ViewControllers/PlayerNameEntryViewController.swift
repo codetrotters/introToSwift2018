@@ -13,6 +13,7 @@ class PlayerNameEntryViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
             nameTextField.delegate = self
+            nameTextField.returnKeyType = .next
         }
     }
     
@@ -41,14 +42,20 @@ class PlayerNameEntryViewController: UIViewController {
         configureBackBarButton(playerName)
         
         if nextPlayer == .allConfigured {
-            print("Ready for next part of the flow")
+            presentScoreSelection()
         } else {
             presentNextPlayer(nextPlayer)
         }
     }
     
+    private func presentScoreSelection() {
+        let scoreSelectionVC = MainStoryboard.scoreSelectionVC
+        scoreSelectionVC.kapicuGame = kapicuGame
+        navigationController?.pushViewController(scoreSelectionVC, animated: true)
+    }
+    
     private func presentNextPlayer(_ player: PlayerToConfigure) {
-        let playerNameVC = storyboard?.instantiateViewController(withIdentifier: "playerName") as! PlayerNameEntryViewController
+        let playerNameVC = MainStoryboard.playerNameEntryVC
         playerNameVC.kapicuGame = kapicuGame
         playerNameVC.playerToConfigure = player
         navigationController?.pushViewController(playerNameVC, animated: true)
@@ -71,6 +78,9 @@ extension PlayerNameEntryViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        if navigationItem.rightBarButtonItem?.isEnabled == true {
+            nextButtonPressed()
+        }
         return true
     }
 }

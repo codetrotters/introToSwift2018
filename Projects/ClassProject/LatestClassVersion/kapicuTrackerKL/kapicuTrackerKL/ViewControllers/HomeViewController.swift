@@ -23,8 +23,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func newGameButtonPressed(_ sender: UIButton) {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let numberOfPlayersViewController = storyboard.instantiateViewController(withIdentifier: VCIdentifiers.numberOfPlayers.txt) as! NumberOfPlayersViewController
+        let numberOfPlayersViewController = MainStoryboard.numberOfPlayersVC
         navigationController?.pushViewController(numberOfPlayersViewController, animated: true)
     }
     

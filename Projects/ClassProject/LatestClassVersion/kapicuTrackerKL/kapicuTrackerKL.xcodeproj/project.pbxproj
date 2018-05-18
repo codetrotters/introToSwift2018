@@ -19,6 +19,10 @@
 		C0CF4819206B19AB00131955 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CF4818206B19AB00131955 /* HomeViewController.swift */; };
 		C0D719B320AE3910007636FF /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D719B220AE3910007636FF /* Storyboards.swift */; };
 		C0D719B520AE3B23007636FF /* StoryboardEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D719B420AE3B23007636FF /* StoryboardEnums.swift */; };
+		C0D719B720AE3C67007636FF /* StoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D719B620AE3C67007636FF /* StoryboardExtensions.swift */; };
+		C0D719B920AE40A7007636FF /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D719B820AE40A7007636FF /* StringExtensions.swift */; };
+		C0D719BB20AE4E07007636FF /* ScoreSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D719BA20AE4E07007636FF /* ScoreSelectionViewController.swift */; };
+		C0D719BD20AE5888007636FF /* GameModelEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D719BC20AE5888007636FF /* GameModelEnums.swift */; };
 		C0DF1CE3207447A7005FCD3D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF1CE2207447A7005FCD3D /* UIColorExtensions.swift */; };
 		C0DF1CE5207451CD005FCD3D /* NumberOfPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF1CE4207451CD005FCD3D /* NumberOfPlayersViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +42,10 @@
 		C0CF4818206B19AB00131955 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C0D719B220AE3910007636FF /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		C0D719B420AE3B23007636FF /* StoryboardEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardEnums.swift; sourceTree = "<group>"; };
+		C0D719B620AE3C67007636FF /* StoryboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExtensions.swift; sourceTree = "<group>"; };
+		C0D719B820AE40A7007636FF /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		C0D719BA20AE4E07007636FF /* ScoreSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSelectionViewController.swift; sourceTree = "<group>"; };
+		C0D719BC20AE5888007636FF /* GameModelEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModelEnums.swift; sourceTree = "<group>"; };
 		C0DF1CE2207447A7005FCD3D /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		C0DF1CE4207451CD005FCD3D /* NumberOfPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfPlayersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +67,7 @@
 				C0CF4818206B19AB00131955 /* HomeViewController.swift */,
 				C0DF1CE4207451CD005FCD3D /* NumberOfPlayersViewController.swift */,
 				C0B5DCAB20928CBB0006B977 /* PlayerNameEntryViewController.swift */,
+				C0D719BA20AE4E07007636FF /* ScoreSelectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -68,6 +77,8 @@
 			children = (
 				C0DF1CE2207447A7005FCD3D /* UIColorExtensions.swift */,
 				C00AEA592076EE850007F098 /* UIViewControllerExtensions.swift */,
+				C0D719B620AE3C67007636FF /* StoryboardExtensions.swift */,
+				C0D719B820AE40A7007636FF /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -95,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				C0B5DCAE20929B7E0006B977 /* GameModel.swift */,
+				C0D719BC20AE5888007636FF /* GameModelEnums.swift */,
 				C0B5DCB02092ABDE0006B977 /* KapicuGame.swift */,
 			);
 			path = Models;
@@ -203,16 +215,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D719BD20AE5888007636FF /* GameModelEnums.swift in Sources */,
 				C0DF1CE3207447A7005FCD3D /* UIColorExtensions.swift in Sources */,
 				C0B5DCAC20928CBB0006B977 /* PlayerNameEntryViewController.swift in Sources */,
+				C0D719B720AE3C67007636FF /* StoryboardExtensions.swift in Sources */,
 				C0D719B520AE3B23007636FF /* StoryboardEnums.swift in Sources */,
 				C0CF4807206B11B900131955 /* AppDelegate.swift in Sources */,
 				C0B5DCB12092ABDE0006B977 /* KapicuGame.swift in Sources */,
+				C0D719BB20AE4E07007636FF /* ScoreSelectionViewController.swift in Sources */,
 				C00AEA5A2076EE850007F098 /* UIViewControllerExtensions.swift in Sources */,
 				C00AEA602076F1110007F098 /* ButtonStyle.swift in Sources */,
 				C0D719B320AE3910007636FF /* Storyboards.swift in Sources */,
 				C0B5DCAF20929B7E0006B977 /* GameModel.swift in Sources */,
 				C0CF4819206B19AB00131955 /* HomeViewController.swift in Sources */,
+				C0D719B920AE40A7007636FF /* StringExtensions.swift in Sources */,
 				C0DF1CE5207451CD005FCD3D /* NumberOfPlayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
