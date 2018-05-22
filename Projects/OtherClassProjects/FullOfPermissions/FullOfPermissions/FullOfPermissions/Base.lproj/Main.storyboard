@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FullOfPermissions" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iyr-UE-Acb">
+                                <rect key="frame" x="87" y="72" width="200" height="199"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="W6j-PY-XiD"/>
+                                    <constraint firstAttribute="width" secondItem="Iyr-UE-Acb" secondAttribute="height" multiplier="1:1" constant="1" id="jWU-9n-04q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Photo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9r-q1-o6o">
+                                <rect key="frame" x="160" y="151.5" width="55" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQD-WN-KuC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="343.5"/>
+                                <connections>
+                                    <action selector="imageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2D-oY-YfX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uQD-WN-KuC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1xz-JE-mcU"/>
+                            <constraint firstItem="uQD-WN-KuC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="65s-VQ-xI6"/>
+                            <constraint firstItem="Iyr-UE-Acb" firstAttribute="centerY" secondItem="uQD-WN-KuC" secondAttribute="centerY" id="IUd-CB-SmL"/>
+                            <constraint firstItem="uQD-WN-KuC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NaF-bx-rqs"/>
+                            <constraint firstItem="uQD-WN-KuC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Q17-tp-0Iq"/>
+                            <constraint firstItem="x9r-q1-o6o" firstAttribute="centerY" secondItem="Iyr-UE-Acb" secondAttribute="centerY" id="Tvr-hT-03W"/>
+                            <constraint firstItem="Iyr-UE-Acb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iW2-7a-MaM"/>
+                            <constraint firstItem="x9r-q1-o6o" firstAttribute="centerX" secondItem="Iyr-UE-Acb" secondAttribute="centerX" id="ksE-iI-ahE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Iyr-UE-Acb" id="HpY-A7-K4i"/>
+                        <outlet property="uploadPhotoLabel" destination="x9r-q1-o6o" id="APE-Wm-n0h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+</document>
