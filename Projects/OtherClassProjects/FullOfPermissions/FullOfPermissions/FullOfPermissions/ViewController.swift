@@ -23,7 +23,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
 
     fileprivate let picker = UIImagePickerController()
-    fileprivate let cameraMediaType = AVMediaType.video
     
     override func viewDidLoad() {
         super.viewDidLoad()

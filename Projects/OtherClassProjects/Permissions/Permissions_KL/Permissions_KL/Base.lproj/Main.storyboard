@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,16 +21,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jMD-Q7-6C6">
-                                <rect key="frame" x="87.5" y="64" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="82" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jMD-Q7-6C6" secondAttribute="height" multiplier="1:1" id="4Jd-3r-w8R"/>
                                     <constraint firstAttribute="width" constant="200" id="sFT-2l-uoc"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-qb-vOC">
-                                <rect key="frame" x="88" y="64" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-qb-vOC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="323.5"/>
                                 <connections>
                                     <action selector="imageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WRW-Q5-U3G"/>
                                 </connections>
@@ -37,8 +37,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jMD-Q7-6C6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="MxQ-87-Jxz"/>
-                            <constraint firstItem="jMD-Q7-6C6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TUU-Tf-4bK"/>
+                            <constraint firstItem="LOF-qb-vOC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Atw-5j-v9B"/>
+                            <constraint firstItem="jMD-Q7-6C6" firstAttribute="centerY" secondItem="LOF-qb-vOC" secondAttribute="centerY" id="QVf-nA-tuB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LOF-qb-vOC" secondAttribute="trailing" id="XNr-xg-lrG"/>
+                            <constraint firstItem="jMD-Q7-6C6" firstAttribute="centerX" secondItem="LOF-qb-vOC" secondAttribute="centerX" id="Y27-bd-wNx"/>
+                            <constraint firstItem="LOF-qb-vOC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jPO-5m-PF5"/>
+                            <constraint firstItem="LOF-qb-vOC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="odb-Mh-FGD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
