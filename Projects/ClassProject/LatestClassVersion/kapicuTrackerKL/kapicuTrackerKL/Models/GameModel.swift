@@ -15,6 +15,7 @@ struct GameModel {
     var thirdPlayer: String = ""
     var fourthPlayer: String = ""
     var winningScore: Int = 500
+    var withPrizes: Bool = true
 }
 
 extension GameModel {
@@ -57,25 +58,6 @@ extension GameModel {
         case .four, .allConfigured:
             return .allConfigured
         }
-    }
-    
-    mutating func updatePlayerName(_ name: String, _ player: PlayerToConfigure) {
-        switch player {
-        case .one:
-            firstPlayer = name
-        case .two:
-            secondPlayer = name
-        case .three:
-            thirdPlayer = name
-        case .four:
-            fourthPlayer = name
-        case .allConfigured:
-            break
-        }
-    }
-    
-    mutating func updateWinningScore(_ score: Int) {
-        self.winningScore = score
     }
 }
 

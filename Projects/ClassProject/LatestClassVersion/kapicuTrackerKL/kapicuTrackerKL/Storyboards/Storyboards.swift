@@ -27,6 +27,13 @@ struct MainStoryboard {
         return main.vcOfType(.scoreSelection) as! ScoreSelectionViewController
     }
     
+    static var prizeSelection: PrizeSelectionViewController {
+        return main.vcOfType(.prizeSelection) as! PrizeSelectionViewController
+    }
+    
+    static var gameVC: GameViewController {
+        return main.vcOfType(.gameView) as! GameViewController
+    }
 }
 
 

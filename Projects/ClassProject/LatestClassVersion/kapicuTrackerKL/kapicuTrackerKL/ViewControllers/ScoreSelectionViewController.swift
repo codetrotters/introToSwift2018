@@ -48,6 +48,12 @@ class ScoreSelectionViewController: UIViewController {
         }
         
         kapicuGame.updateWinningScore(scoreType.rawValue)
-        // take user to prize view
+        
+        let backButtonName = "Up to \(scoreType.txt)"
+        configureBackBarButton(backButtonName)
+
+        let prizeSelectionVC = MainStoryboard.prizeSelection
+        prizeSelectionVC.kapicuGame = kapicuGame
+        navigationController?.pushViewController(prizeSelectionVC, animated: true)
     }
 }

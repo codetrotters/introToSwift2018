@@ -213,6 +213,92 @@
             </objects>
             <point key="canvasLocation" x="3770" y="116"/>
         </scene>
+        <!--Prize Selection View Controller-->
+        <scene sceneID="clI-nR-qWC">
+            <objects>
+                <viewController storyboardIdentifier="prizeSelection" id="Vh0-Ef-Wtz" customClass="PrizeSelectionViewController" customModule="kapicuTrackerKL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uaL-Vx-kG5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9gm-uE-Laq">
+                                <rect key="frame" x="94" y="281" width="187.5" height="104"/>
+                                <subviews>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7w-Th-GVU">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="42"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="jbk-JA-lja"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Three"/>
+                                        <connections>
+                                            <action selector="prizeButtonPressed:" destination="Vh0-Ef-Wtz" eventType="touchUpInside" id="NYh-Ut-OHy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh3-41-DHQ">
+                                        <rect key="frame" x="0.0" y="62" width="187.5" height="42"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="cY9-Rc-Y0B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Four"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9gm-uE-Laq" firstAttribute="width" secondItem="uaL-Vx-kG5" secondAttribute="width" multiplier="1:2" id="RqM-gf-Y2K"/>
+                            <constraint firstItem="9gm-uE-Laq" firstAttribute="centerY" secondItem="uaL-Vx-kG5" secondAttribute="centerY" id="dsS-HR-fSA"/>
+                            <constraint firstItem="9gm-uE-Laq" firstAttribute="centerX" secondItem="uaL-Vx-kG5" secondAttribute="centerX" id="uIc-mi-xL2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BDK-Zl-NuD"/>
+                    </view>
+                    <connections>
+                        <outlet property="withPrizesButton" destination="y7w-Th-GVU" id="NiR-oS-mPm"/>
+                        <outlet property="withoutPrizeButton" destination="yh3-41-DHQ" id="60D-Qh-gJl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvt-Za-zkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4474" y="116"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="zPy-YG-Eiy">
+            <objects>
+                <viewController storyboardIdentifier="gameView" id="rHH-ad-S6S" customClass="GameViewController" customModule="kapicuTrackerKL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R4X-4E-UFc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVT-Cn-6rQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rHH-ad-S6S" id="Dfs-zK-az7"/>
+                                    <outlet property="delegate" destination="rHH-ad-S6S" id="byq-76-lpt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="itR-HQ-H6p" firstAttribute="trailing" secondItem="aVT-Cn-6rQ" secondAttribute="trailing" id="Dde-jg-jKv"/>
+                            <constraint firstItem="aVT-Cn-6rQ" firstAttribute="top" secondItem="itR-HQ-H6p" secondAttribute="top" id="HwU-ze-PiX"/>
+                            <constraint firstItem="aVT-Cn-6rQ" firstAttribute="leading" secondItem="itR-HQ-H6p" secondAttribute="leading" id="OjB-lo-QsO"/>
+                            <constraint firstItem="itR-HQ-H6p" firstAttribute="bottom" secondItem="aVT-Cn-6rQ" secondAttribute="bottom" id="YBw-F0-J4c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="itR-HQ-H6p"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="aVT-Cn-6rQ" id="z92-0d-Rml"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMo-Pj-zhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5244" y="108"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="tLz-QK-IYp">
             <objects>
