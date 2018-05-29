@@ -26,6 +26,11 @@ class KapicuGame {
 // MARK: - Custom getters
 
 extension KapicuGame {
+    
+    var numberOfPlayers: NumberOfPlayers {
+        return gameModel.numberOfPlayers
+    }
+    
     func navTitleFor(_ player: PlayerToConfigure) -> String {
         return gameModel.navTitleFor(player)
     }

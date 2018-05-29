@@ -21,17 +21,30 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Game"
+        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.estimatedSectionHeaderHeight = 100
+        print("Kapicu game \(kapicuGame.numberOfPlayers.txt)")
     }
 }
 
-extension GameViewController: UITableViewDataSource {
+extension GameViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "scoreCell") as? ScoreCell
+        headerCell?.leftScoreStackView.isHidden = true
+        headerCell?.rightScoreStackView.alignment = .center
+        headerCell?.backgroundColor = .yellow
+        return headerCell
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
+        cell.backgroundColor = UIColor.lightGray
+        return cell
     }
 }
 

@@ -23,8 +23,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func newGameButtonPressed(_ sender: UIButton) {
-        let numberOfPlayersViewController = MainStoryboard.numberOfPlayersVC
-        navigationController?.pushViewController(numberOfPlayersViewController, animated: true)
+        //let numberOfPlayersViewController = MainStoryboard.numberOfPlayersVC
+        
+        let gameVC = MainStoryboard.gameVC
+        gameVC.kapicuGame = KapicuGame(GameModel.defaultModel(with: .four))
+        navigationController?.pushViewController(gameVC, animated: true)
     }
     
     private func configureNavigationBar() {

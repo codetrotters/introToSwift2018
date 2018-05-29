@@ -11,6 +11,7 @@
 		C0055F4D20B789D200083E19 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0055F4C20B789D200083E19 /* GameViewController.swift */; };
 		C00AEA5A2076EE850007F098 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AEA592076EE850007F098 /* UIViewControllerExtensions.swift */; };
 		C00AEA602076F1110007F098 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AEA5F2076F1110007F098 /* ButtonStyle.swift */; };
+		C04096E820BE0EE600371A97 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04096E720BE0EE600371A97 /* ScoreCell.swift */; };
 		C0B5DCAC20928CBB0006B977 /* PlayerNameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCAB20928CBB0006B977 /* PlayerNameEntryViewController.swift */; };
 		C0B5DCAF20929B7E0006B977 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCAE20929B7E0006B977 /* GameModel.swift */; };
 		C0B5DCB12092ABDE0006B977 /* KapicuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCB02092ABDE0006B977 /* KapicuGame.swift */; };
@@ -34,6 +35,7 @@
 		C0055F4C20B789D200083E19 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C00AEA592076EE850007F098 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		C00AEA5F2076F1110007F098 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		C04096E720BE0EE600371A97 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		C0B5DCAB20928CBB0006B977 /* PlayerNameEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameEntryViewController.swift; sourceTree = "<group>"; };
 		C0B5DCAE20929B7E0006B977 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		C0B5DCB02092ABDE0006B977 /* KapicuGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KapicuGame.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				C0D719BA20AE4E07007636FF /* ScoreSelectionViewController.swift */,
 				C0055F4A20B773E600083E19 /* PrizeSelectionViewController.swift */,
 				C0055F4C20B789D200083E19 /* GameViewController.swift */,
+				C04096E720BE0EE600371A97 /* ScoreCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				C0055F4B20B773E600083E19 /* PrizeSelectionViewController.swift in Sources */,
 				C0CF4819206B19AB00131955 /* HomeViewController.swift in Sources */,
 				C0D719B920AE40A7007636FF /* StringExtensions.swift in Sources */,
+				C04096E820BE0EE600371A97 /* ScoreCell.swift in Sources */,
 				C0DF1CE5207451CD005FCD3D /* NumberOfPlayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
