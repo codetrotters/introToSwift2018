@@ -10,6 +10,10 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    let scoreViewTag = 2018
+    
+    @IBOutlet weak var scoreTableViewHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView(frame: .zero)
@@ -25,25 +29,37 @@ class GameViewController: UIViewController {
         tableView.estimatedSectionHeaderHeight = 100
         print("Kapicu game \(kapicuGame.numberOfPlayers.txt)")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.layoutIfNeeded()
+        let headerView = tableView.viewWithTag(scoreViewTag)
+        scoreTableViewHeightConstraint.constant = headerView?.frame.height ?? 0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gameDetailsVC = segue.destination as? GameDetailsViewController {
+            gameDetailsVC.kapicuGame = kapicuGame
+        }
+    }
 }
 
 extension GameViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "scoreCell") as? ScoreCell
-        headerCell?.leftScoreStackView.isHidden = true
-        headerCell?.rightScoreStackView.alignment = .center
-        headerCell?.backgroundColor = .yellow
+        headerCell?.configure(with: kapicuGame)
+        headerCell?.backgroundColor = .white
+        headerCell?.tag = scoreViewTag
         return headerCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
-        cell.backgroundColor = UIColor.lightGray
         return cell
     }
 }

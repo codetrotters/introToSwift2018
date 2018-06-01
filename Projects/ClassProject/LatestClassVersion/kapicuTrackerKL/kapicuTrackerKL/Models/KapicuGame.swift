@@ -42,6 +42,21 @@ extension KapicuGame {
     func nextPlayerToConfigure(_ currentPlayer: PlayerToConfigure) -> PlayerToConfigure {
         return gameModel.nextPlayerToConfigure(currentPlayer)
     }
+    
+    func name(of player: PlayerToConfigure) -> String {
+        switch player {
+        case .one:
+            return gameModel.firstPlayer
+        case .two:
+            return gameModel.secondPlayer
+        case .three:
+            return gameModel.thirdPlayer
+        case .four:
+            return gameModel.fourthPlayer
+        default:
+            return ""
+        }
+    }
 }
 
 // MARK: - Mutating functions

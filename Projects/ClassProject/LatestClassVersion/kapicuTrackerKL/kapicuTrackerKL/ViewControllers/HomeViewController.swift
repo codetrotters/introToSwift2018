@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         //let numberOfPlayersViewController = MainStoryboard.numberOfPlayersVC
         
         let gameVC = MainStoryboard.gameVC
-        gameVC.kapicuGame = KapicuGame(GameModel.defaultModel(with: .four))
+        gameVC.kapicuGame = KapicuGame(GameModel.defaultModel(with: .three))
         navigationController?.pushViewController(gameVC, animated: true)
     }
     
