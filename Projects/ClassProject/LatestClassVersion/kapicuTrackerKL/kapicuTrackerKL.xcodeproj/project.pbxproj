@@ -13,6 +13,7 @@
 		C00AEA602076F1110007F098 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00AEA5F2076F1110007F098 /* ButtonStyle.swift */; };
 		C04096E820BE0EE600371A97 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04096E720BE0EE600371A97 /* ScoreCell.swift */; };
 		C04096EE20C0C10600371A97 /* GameDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04096ED20C0C10600371A97 /* GameDetailsViewController.swift */; };
+		C077E30E20C74BBB00D6F082 /* GameDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C077E30D20C74BBB00D6F082 /* GameDetailCollectionViewCell.swift */; };
 		C0B5DCAC20928CBB0006B977 /* PlayerNameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCAB20928CBB0006B977 /* PlayerNameEntryViewController.swift */; };
 		C0B5DCAF20929B7E0006B977 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCAE20929B7E0006B977 /* GameModel.swift */; };
 		C0B5DCB12092ABDE0006B977 /* KapicuGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5DCB02092ABDE0006B977 /* KapicuGame.swift */; };
@@ -38,6 +39,7 @@
 		C00AEA5F2076F1110007F098 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		C04096E720BE0EE600371A97 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
 		C04096ED20C0C10600371A97 /* GameDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewController.swift; sourceTree = "<group>"; };
+		C077E30D20C74BBB00D6F082 /* GameDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0B5DCAB20928CBB0006B977 /* PlayerNameEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNameEntryViewController.swift; sourceTree = "<group>"; };
 		C0B5DCAE20929B7E0006B977 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		C0B5DCB02092ABDE0006B977 /* KapicuGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KapicuGame.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				C0055F4C20B789D200083E19 /* GameViewController.swift */,
 				C04096E720BE0EE600371A97 /* ScoreCell.swift */,
 				C04096ED20C0C10600371A97 /* GameDetailsViewController.swift */,
+				C077E30D20C74BBB00D6F082 /* GameDetailCollectionViewCell.swift */,
 			);
 			path = GameView;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				C0B5DCAC20928CBB0006B977 /* PlayerNameEntryViewController.swift in Sources */,
 				C0D719B720AE3C67007636FF /* StoryboardExtensions.swift in Sources */,
 				C0D719B520AE3B23007636FF /* StoryboardEnums.swift in Sources */,
+				C077E30E20C74BBB00D6F082 /* GameDetailCollectionViewCell.swift in Sources */,
 				C0CF4807206B11B900131955 /* AppDelegate.swift in Sources */,
 				C0055F4D20B789D200083E19 /* GameViewController.swift in Sources */,
 				C0B5DCB12092ABDE0006B977 /* KapicuGame.swift in Sources */,

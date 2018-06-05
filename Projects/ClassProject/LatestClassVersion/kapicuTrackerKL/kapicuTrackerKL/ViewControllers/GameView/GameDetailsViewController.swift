@@ -20,6 +20,8 @@ class GameDetailsViewController: UIViewController {
     {
         didSet{
             scoreByRoundCollectionView.backgroundColor = .lightGray
+            scoreByRoundCollectionView.bounces = false
+            scoreByRoundCollectionView.showsVerticalScrollIndicator = false
         }
     }
     
@@ -40,7 +42,15 @@ extension GameDetailsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCell", for: indexPath) as! GameDetailCollectionViewCell
+        
+        if isInRoundColumn(indexPath) {
+            let round = (indexPath.row / columnsBasedOnNumberOfPlayers) + 1
+            cell.textLabel.text = "\(round)"
+        } else {
+            cell.textLabel.text = "Score Cell"
+        }
+        
         cell.backgroundColor = .white
         return cell
     }
@@ -63,8 +73,14 @@ extension GameDetailsViewController: UICollectionViewDelegateFlowLayout {
         let columns = CGFloat(columnsBasedOnNumberOfPlayers)
         let cellSpacing = minimumSpacing
         
-        let cellWidth = (viewWidth - (columns - 1) * cellSpacing) / columns
-        let cellHeight = cellWidth
+        var cellWidth = (viewWidth - (columns - 1) * cellSpacing) / columns
+        let cellHeight = cellWidth / 2.0
+        
+        if isInRoundColumn(indexPath) {
+            cellWidth = cellHeight
+        } else {
+            cellWidth += cellWidth / CGFloat(columnsBasedOnNumberOfPlayers + 2)
+        }
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
@@ -73,6 +89,10 @@ extension GameDetailsViewController: UICollectionViewDelegateFlowLayout {
         var numberOfPlayers = kapicuGame.numberOfPlayers
         numberOfPlayers = (numberOfPlayers == .four) ? .two : numberOfPlayers
         return numberOfPlayers.rawValue + extraColumnForRound
+    }
+    
+    private func isInRoundColumn(_ indexPath: IndexPath) -> Bool {
+        return indexPath.row % columnsBasedOnNumberOfPlayers == 0
     }
 }
 
